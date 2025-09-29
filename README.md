@@ -1,47 +1,43 @@
-# Shaiya Asgard - WebSite - 2025
+# Shaiya Asgard - Website - 2025
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/matheusvalpassos/ShaiyaAsgardV2?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/matheusvalpassos/ShaiyaAsgardV2?style=for-the-badge)
 
+<img src="imagem.png" alt="Example image">
 
-<img src="imagem.png" alt="Exemplo imagem">
+> This is a modern website project for the game Shaiya Asgard, developed with Django. It offers user authentication, a new interface design (UI/UX), and a dynamic ranking system integrated with a relational database.
 
-> Este é o projeto de um website moderno para o jogo Shaiya Asgard, desenvolvido com Django. Ele oferece autenticação de usuários, um novo design de interface (UI/UX) e um sistema de ranking dinâmico integrado a um banco de dados relacional.
+### Adjustments and Improvements
 
-### Ajustes e melhorias
+The project is still under development, and future updates will focus on the following tasks:
 
-O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas para as seguintes tarefas:
+- [x] Implementation of user authentication (registration and login).
+- [x] Development of a new UI/UX design for the website.
+- [x] Addition of a ranking table linked to the database.
+- [ ] Creation of a user control panel.
+- [ ] Performance and security optimization.
+- [ ] Addition of news and events features.
 
-- [x] Implementação de autenticação de usuários (registro e login).
-- [x] Desenvolvimento de novo design UI/UX para o website.
-- [x] Adição de tabela de rankeamento vinculada ao banco de dados.
-- [ ] Criação de painel de controle para o usuário.
-- [ ] Otimização de performance e segurança.
-- [ ] Adição de funcionalidades de notícias e eventos.
+Before you begin, make sure you meet the following requirements:
 
-## 💻 Pré-requisitos
+- You have installed the latest version of Python 3.10+ (required for Django 5.1.6).
+- You have pip installed and updated.
+- You have Node.js and npm installed (required to compile Tailwind CSS).
+- You have SQL Server installed or access to a SQL Server instance for the database.
+- ODBC Driver for SQL Server: To connect to MSSQL, it is crucial that you have the corresponding ODBC driver installed on your system (e.g., ODBC Driver 17 for SQL Server).
+- You have a Windows machine for the production setup (Windows Server and Nginx). The development environment is compatible with Windows, Linux, and macOS.
+- You have read the installation and configuration sections below.
 
-Antes de começar, verifique se você atendeu aos seguintes requisitos:
+## Installing Shaiya Asgard Website
 
-- Você instalou a versão mais recente do **Python 3.10+** (necessário para `Django 5.1.6`).
-- Você tem o **pip** instalado e atualizado.
-- Você tem o **Node.js e npm** instalados (necessários para compilar o Tailwind CSS).
-- Você tem o **SQL Server** instalado ou acesso a uma instância de SQL Server para o banco de dados.
-- **Driver ODBC para SQL Server:** Para a conexão com o MSSQL, é crucial que você tenha o driver ODBC correspondente instalado em seu sistema (ex: `ODBC Driver 17 for SQL Server`).
-- Você tem uma máquina **Windows** para o setup de produção (`Windows Server` e `Nginx`). O ambiente de desenvolvimento é compatível com Windows, Linux e macOS.
-- Você leu as seções de instalação e configuração abaixo.
+To install and configure the Shaiya Asgard Website, follow these steps:
 
-## Instalando Shaiya Asgard Website
+### 1. Clone the repository:
 
-Para instalar e configurar o Shaiya Asgard Website, siga estas etapas:
-
-### 1. Clone o repositório:
-
-```bash
-git clone https://github.com/matheusvalpassos/Shaiya-Django-Website.git 
+bash
+git clone https://github.com/matheusvalpassos/Shaiya-Django-Website.git
 cd Shaiya-Django-Website
-```
-### 2. Crie e ative o ambiente virtual:
+### 2. Create and activate the virtual environment:
 
 Linux e macOS:
 ```
@@ -55,102 +51,102 @@ python -m venv .venv
 .venv\Scripts\activate
 ```
 
-### 3. Instale as dependências Python:
+### 3. Install Python dependencies:
 
-Todas as dependências listadas no requirements.txt serão instaladas.
+All dependencies listed in requirements.txt will be installed.
 ```
 pip install -r requirements.txt
 ```
 
-### 4. Instale as dependências Node.js (para Tailwind CSS):
+### 4. Install Node.js dependencies (for Tailwind CSS):
 ```
 npm install
 ```
 
-### 5. Configure a conexão com o banco de dados (MSSQL):
+### 5. Configure the database connection (MSSQL):
 
-Edite o arquivo myproject/settings.py (ou onde suas configurações de DB estão, como config/settings.py) e configure a seção DATABASES para apontar para o seu SQL Server. Exemplo:
+Edit the myproject/settings.py file (or wherever your DB settings are, such as config/settings.py) and configure the DATABASES section to point to your SQL Server. Example:
 
-# myproject/settings.py (ou config/settings.py)
+# myproject/settings.py (or config/settings.py)
 ```
 DATABASES = {
-    'default': {
-        'ENGINE': 'mssql', # Ou 'sql_server.pyodbc' dependendo da sua configuração
-        'NAME': 'SUA_BASE_DE_DADOS',
-        'HOST': 'SEU_SERVIDOR_SQL',
-        'PORT': '', # Deixe vazio para a porta padrão (1433)
-        'USER': 'SEU_USUARIO_DB',
-        'PASSWORD': 'SUA_SENHA_DB',
-        'OPTIONS': {
-            'driver': 'ODBC Driver 17 for SQL Server', # Verifique o driver ODBC correto instalado
-            'autocommit': True, # Opcional: para commits automáticos após cada operação
-        },
-    }
+'default': {
+'ENGINE': 'mssql', # Or 'sql_server.pyodbc' depending on your configuration
+'NAME': 'YOUR_DATABASE',
+'HOST': 'YOUR_SQL_SERVER',
+'PORT': '', # Leave blank for the default port (1433)
+'USER': 'YOUR_DB_USER',
+'PASSWORD': 'YOUR_DB_PASSWORD',
+'OPTIONS': {
+'driver': 'ODBC Driver 17 for SQL Server', # Verify the correct ODBC driver is installed
+'autocommit': True, # Optional: for automatic commits after each operation
+},
+}
 }
 ```
-⚠️ Certifique-se de ter o driver ODBC instalado corretamente no sistema! 
+⚠️ Make sure you have the ODBC driver correctly installed on your system!
 
-### 6. Execute as migrações do banco de dados:
+### 6. Run database migrations:
 
 ```python manage.py migrate```
 
-### 7. Compile o Tailwind CSS:
+### 7. Compile Tailwind CSS:
 
-```npm run build-tailwind``` 
+```npm run build-tailwind```
 
-# Ou o comando que você configurou para compilar o CSS
+# Or the command you configured to compile the CSS
 
-(Se você configurou npx tailwindcss -i ./src/input.css -o ./static/css/main.css --watch no package.json, pode ser npm run watch-tailwind para desenvolvimento ou npm run build-tailwind para produção).
+(If you configured npx tailwindcss -i ./src/input.css -o ./static/css/main.css --watch in package.json, this could be npm run watch-tailwind for development or npm run build-tailwind for production.)
 
-## ☕ Usando o Shaiya Asgard Website
+## ☕ Using the Shaiya Asgard Website
 
-Inicie o servidor de desenvolvimento:
+Start the development server:
 
 ```
 python manage.py runserver
 ```
 
-Acesse: http://127.0.0.1:8000/ no navegador.
+Acesse: http://127.0.0.1:8000/ non-browser.
 
-### Funcionalidades Disponíveis:
+### Available Features:
 
-**Página Inicial**: Apresentação do projeto com elementos visuais interativos.
+**Home Page**: Project presentation with interactive visuals.
 
-**Autenticação** : Registre ou faça login com formulários dinâmicos.
+**Authentication**: Register or log in with dynamic forms.
 
-**Ranking** : Visualize a tabela de classificação integrada ao banco de dados.
+**Ranking**: View the leaderboard integrated with the database.
 
-## 📫 Contribuindo para o Projeto
+## 📫 Contributing to the Project
 
-Para contribuir com o Shaiya Asgard Website, siga as etapas descritas no guia de contribuição:
+To contribute to the Shaiya Asgard Website, follow the steps outlined in the contributing guide:
 
-1. Bifurque este repositório.
-2. Crie um branch: `git checkout -b <nome_branch>`.
-3. Faça suas alterações e confirme-as: `git commit -m '<mensagem_commit>'`
-4. Envie para o branch original: `git push origin <nome_do_projeto> / <local>`
-5. Crie a solicitação de pull.
+1. Fork this repository.
+2. Create a branch: `git checkout -b <branch_name>`.
+3. Make your changes and commit them: `git commit -m '<commit_message>``.
+4. Push to the original branch: `git push origin <project_name> / <location>`.
+5. Create the pull request.
 
-Como alternativa, consulte a documentação do GitHub em [Guia de Contribuição (CONTRIBUTING.md)](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
+Alternatively, see the GitHub documentation at [Contributing Guide (CONTRIBUTING.md)](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
-## 🤝 Colaboradores
+## 🤝 Contributors
 
-Agradecemos às seguintes pessoas que ajudaram neste projeto:
+Thank you to the following people who helped with this project:
 
 <table>
 <tr>
 <td align="center">
 <a href="https://github.com/matheusvalpassos" title="Matheus Valpassos">
-<img src="https://avatars.githubusercontent.com/matheusvalpassos" width="100px" alt="Foto do Matheus"/><br>
+<img src="https://avatars.githubusercontent.com/matheusvalpassos" width="100px" alt="Matheus's Photo"/><br>
 <sub><b>Matheus Valpassos</b></sub>
 </a>
 </td>
 </tr>
 </table>
 
-## 😄 Seja um dos contribuidores
+## 😄 Become a Contributor
 
-Quer fazer parte desse projeto? Clique [AQUI](CONTRIBUTING.md) e leia como contribuir.
+Want to be part of this project? Click [HERE](CONTRIBUTING.md) and read how to contribute.
 
-## 📝 Licença
+## 📝 License
 
-Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
+This project is licensed. See the [LICENSE.md] file for more details.
