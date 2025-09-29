@@ -1,26 +1,26 @@
-# 🤝 Guia de Contribuição
+# 🤝 Contributing Guide
 
-Este documento orienta como contribuir para o projeto **Shaiya Asgard Website**. Seguir essas diretrizes ajuda a garantir que sua contribuição seja aceita rapidamente.
+This document provides guidance on how to contribute to the **Shaiya Asgard Website** project. Following these guidelines helps ensure your contribution is accepted quickly.
 
 ---
 
-## Como Contribuir
+## How to Contribute
 
-1. **Fork** o repositório
-2. **Crie um branch** com sua feature ou correção:
-   ```git checkout -b feature/nome-da-feature```
-3. Faça suas alterações e **realize commits claros e semânticos**:
-4. **Envie suas alterações** para o seu fork:
-```git push origin feature/nome-da-feature```
-5. Abra uma **Pull Request** no repositório original com uma descrição clara do que foi alterado.
+1. **Fork** the repository
+2. **Create a branch** with your feature or fix:
+```git checkout -b feature/feature-name```
+3. Make your changes and **make clear, semantic commits**:
+4. **Send your changes** to your fork:
+```git push origin feature/feature-name```
+5. Open a **Pull Request** in the original repository with a clear description of what was changed.
 
-# Diretrizes
+# Guidelines
 
-• Use padrões PEP8 (Python) e boas práticas de código limpo
-• Documente mudanças importantes
-• Não envie builds compilados (como /dist, /build) a menos que necessário
-• Teste suas alterações antes de enviar
+• Use PEP8 (Python) standards and good clean code practices
+• Document important changes
+• Do not submit compiled builds (such as /dist, /build) unless necessary
+• Test your changes before submitting
 
-## Agradecimentos
+## Acknowledgments
 
-Sua contribuição é muito valiosa! Obrigado por ajudar a melhorar o projeto!
+Your contribution is very valuable! Thank you for helping improve the project!
